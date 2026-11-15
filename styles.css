@@ -83,3 +83,19 @@ footer nav a{padding:10px 0 !important}
 .picked .b2{min-height:44px;padding:0 16px;font-size:15px}
 #photo-error:empty{display:none}
 @media (prefers-reduced-motion:reduce){.drop{transition:none}}
+
+/* Findings page: results table, status chips, expandable details */
+.r-ok{background:#D9EFD3}.r-part{background:#FBE7B0}.r-bar{background:#F6D5CF}
+.tscroll{overflow-x:auto;background:#FFFFFF;border:1px solid #EDE6D6;border-radius:10px}
+.ftable{width:100%;min-width:760px;border-collapse:collapse;font-size:15px}
+.ftable th,.ftable td{text-align:left;vertical-align:top;padding:12px 14px;border-bottom:1px solid #EDE6D6}
+.ftable thead th{background:#0F2A4A;color:#FFFFFF;font-weight:700}
+.ftable tbody th{color:#0F2A4A;font-weight:700}
+.ftable tbody tr:last-child>*{border-bottom:0}
+.ftable .chip{white-space:nowrap}
+.fd summary{display:list-item;font-size:18px;padding:14px 18px}
+.fd summary .chip{margin-left:8px;vertical-align:1px}
+.fd-body{padding:0 18px 18px;display:flex;flex-direction:column;gap:10px;font-size:16px}
+.fd-body ul,.lims{margin:0;padding-left:1.2em;display:flex;flex-direction:column;gap:8px}
+.recs{margin:0;padding-left:1.5em;display:flex;flex-direction:column;gap:12px;max-width:52em}
+.recs li::marker{font-weight:700;color:#0F2A4A}

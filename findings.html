@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Findings | ENABLE</title>
+<meta name="description" content="Preliminary results from ENABLE's check of Irvine's online city services against WCAG 2.1 AA.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<script src="site.js"></script>
+</head>
+<body>
+<div style="font-size: 17px; line-height: 1.55">
+<a class="skip" href="#main">Skip to main content</a>
+
+<header class="site-hdr" style="background: #FFFDF8; border-bottom: 1px solid #EDE6D6">
+<div class="wrap hdr" style="padding-top: 12px; padding-bottom: 12px; display: flex; flex-wrap: wrap; gap: 8px 32px; align-items: center; justify-content: space-between">
+<a href="index.html" aria-label="ENABLE, Irvine, CA: home" style="display: flex; align-items: center; gap: 12px; text-decoration: none">
+<img src="images/logo-color.png" alt="" style="display: block; height: 60px; width: auto">
+</a>
+<nav class="site-nav" aria-label="Main">
+<ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 4px 12px">
+<li><a class="nav" href="index.html">Home</a></li>
+<li><a class="nav cur" aria-current="true" href="our-work.html">Our work</a></li>
+<li><a class="nav" href="team.html">Team</a></li>
+<li><a class="nav" href="get-involved.html">Get involved</a></li>
+</ul>
+</nav>
+</div>
+</header>
+
+<main id="main">
+
+<section aria-labelledby="hero-h" style="background: #FAF7EF; display: flex; flex-wrap: wrap">
+<div style="flex: 1 1 400px; min-width: 0; padding: 40px var(--gut) 40px max(var(--gut), calc((100% - 1136px) / 2)); box-sizing: border-box; display: flex; flex-direction: column; gap: 16px; align-items: flex-start; justify-content: center">
+<p class="chip" style="background: #FBE7B0">Preliminary · November 2026</p>
+<h1 id="hero-h" style="font-size: clamp(2.1rem, 3.9vw, 3.1rem); line-height: 1.1">Digital accessibility findings</h1>
+<div aria-hidden="true" style="width: 140px; height: 5px; background: #E3A823; border-radius: 0px"></div>
+<p style="max-width: 44em">We checked the online services Irvine residents use to get a permit, file an ADA complaint, register for a class, and follow or comment on city council meetings. We tested them against WCAG 2.1 AA, the standard the Department of Justice requires city websites and apps to meet by April 26, 2027.</p>
+<p style="max-width: 44em">These are early results from one day of testing, November 14, 2026, with hands-on checks of the two worst services. They are not a full conformance audit.</p>
+</div>
+</section>
+
+<section aria-labelledby="short-h" class="wrap" style="padding-top: 36px; padding-bottom: 12px; display: flex; flex-direction: column; gap: 20px">
+<h2 id="short-h" style="font-size: clamp(1.6rem, 2.8vw, 2rem)">In short</h2>
+<ul style="list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr)); gap: 20px">
+<li class="card" style="padding: 20px; display: flex; flex-direction: column; gap: 8px">
+<h3 style="font-size: 18px">The city's own website is in good shape</h3>
+<p style="font-size: 15px">cityofirvine.gov passed our automated checks on all seven pages we tested, and all five PDF forms we sampled are tagged.</p>
+</li>
+<li class="card" style="padding: 20px; display: flex; flex-direction: column; gap: 8px">
+<h3 style="font-size: 18px">The barriers are in third-party portals</h3>
+<p style="font-size: 15px">Permits, the ADA complaint form, class registration and meeting comments all run on outside vendors' sites, and each has barriers. Under the DOJ rule, those tools still count.</p>
+</li>
+<li class="card" style="padding: 20px; display: flex; flex-direction: column; gap: 8px">
+<h3 style="font-size: 18px">The ADA complaint form is hard to use</h3>
+<p style="font-size: 15px">With the VoiceOver screen reader, the form announces nothing for the State, AM/PM and "Why do you believe the discrimination occurred?" controls. That last one is the core question of the form.</p>
+</li>
+<li class="card" style="padding: 20px; display: flex; flex-direction: column; gap: 8px">
+<h3 style="font-size: 18px">No clear way to report a barrier</h3>
+<p style="font-size: 15px">The city publishes no accessibility statement naming a standard. Its only reporting channel is an email link, with no form, tracking number or stated turnaround.</p>
+</li>
+</ul>
+</section>
+
+<section aria-labelledby="results-h" class="wrap" style="padding-top: 36px; padding-bottom: 12px; display: flex; flex-direction: column; gap: 14px">
+<h2 id="results-h" style="font-size: clamp(1.6rem, 2.8vw, 2rem)">Results by service</h2>
+<p style="max-width: 44em">The city's own website tested clean. The problems sit in the third-party portals residents must use to finish a task. On a narrow screen, scroll the table sideways.</p>
+<div class="tscroll" role="region" aria-labelledby="results-cap" tabindex="0">
+<table class="ftable">
+<caption id="results-cap" class="sr-only">Accessibility results for eight Irvine online services</caption>
+<thead>
+<tr><th scope="col">Service</th><th scope="col">Runs on</th><th scope="col">Result</th><th scope="col">Main barriers</th></tr>
+</thead>
+<tbody>
+<tr><th scope="row">City website (7 pages)</th><td>cityofirvine.gov</td><td><span class="chip r-ok">Mostly passes</span></td><td>Six links all named "Open linked content"; no main landmark</td></tr>
+<tr><th scope="row">Permit portal login</th><td>IrvineReady / goPost</td><td><span class="chip r-bar">Barriers found</span></td><td>Login button has no accessible name; no visible field labels; 4 of 5 text items below minimum contrast; reCAPTCHA</td></tr>
+<tr><th scope="row">ADA grievance form</th><td>SeamlessDocs</td><td><span class="chip r-bar">Barriers found</span></td><td>State, AM/PM and discrimination-type controls are silent to VoiceOver; about 30 fields read by internal names; format hints read as if already filled in; no skip link</td></tr>
+<tr><th scope="row">Class registration</th><td>yourirvine.org</td><td><span class="chip r-part">Partial</span></td><td>4 images without alt text; three h1 headings; reCAPTCHA; relies on an AudioEye overlay</td></tr>
+<tr><th scope="row">Meeting archive</th><td>Granicus</td><td><span class="chip r-part">Partial</span></td><td>No landmarks or skip link; 60 duplicate IDs; 4,243 links on one page</td></tr>
+<tr><th scope="row">Meeting video player</th><td>Granicus</td><td><span class="chip r-part">Partial</span></td><td>Captions toggle exists; play and volume controls have no accessible name; no transcript</td></tr>
+<tr><th scope="row">Public comment (eComment)</th><td>Granicus Ideas</td><td><span class="chip r-bar">Barriers found</span></td><td>14 of 29 text items below minimum contrast, including "View Agenda" buttons at 2.91:1; no main landmark or skip link</td></tr>
+<tr><th scope="row">PDF forms (5 sampled)</th><td>cityofirvine.gov</td><td><span class="chip r-part">Partial</span></td><td>All tagged; 3 lack a document language; 4 lack a title</td></tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<section aria-labelledby="details-h" class="wrap" style="padding-top: 36px; padding-bottom: 12px; display: flex; flex-direction: column; gap: 14px">
+<h2 id="details-h" style="font-size: clamp(1.6rem, 2.8vw, 2rem)">Details</h2>
+<p style="max-width: 44em">Open a service to see each barrier and the WCAG success criterion it relates to.</p>
+<div style="display: flex; flex-direction: column; gap: 12px">
+
+<details class="card fd">
+<summary>City website <span class="chip r-ok">Mostly passes</span></summary>
+<div class="fd-body">
+<p>Seven pages passed every automated check for page language, skip link, image alt text, form labels, heading order, iframe titles and zoom. Pages tested: home, Disability Services, ADA statement, City Council Agendas, ICTV, permits, and Seek Assistance.</p>
+<ul>
+<li><strong>Link purpose (WCAG 2.4.4).</strong> The Disability Services page has six card links whose only accessible name is "Open linked content". A screen-reader user hears the same phrase six times with no destination.</li>
+<li><strong>Vague link text.</strong> The homepage has 18 links reading "Read more" or "More information". Needs a manual check that the surrounding context identifies each one.</li>
+<li><strong>Landmarks.</strong> No page has a main landmark; the skip link targets a plain div. Low severity, because the skip link works.</li>
+<li><strong>Carousel (WCAG 2.2.2).</strong> The homepage has rotating content. Needs a manual check that it can be paused by keyboard.</li>
+</ul>
+</div>
+</details>
+
+<details class="card fd">
+<summary>Permit portal login <span class="chip r-bar">Barriers found</span></summary>
+<div class="fd-body">
+<p>Every permit application goes through the IrvineReady portal, so its login page gates the whole service.</p>
+<ul>
+<li><strong>Unnamed Login button (WCAG 4.1.2).</strong> The Login button has no accessible name, so a screen reader announces only "button". It is the one control every applicant must use.</li>
+<li><strong>No visible labels (WCAG 3.3.2).</strong> The Email and Password fields are named only by placeholder text. A screen reader does announce "Email" and "Password", but the visible hint disappears as soon as you type, which hurts users with memory or cognitive disabilities.</li>
+<li><strong>Contrast (WCAG 1.4.3).</strong> The white-on-green Login button measures 2.78:1 and the blue links 3.68:1. The minimum is 4.5:1.</li>
+<li><strong>reCAPTCHA</strong> sits on the login page. CAPTCHAs are a known barrier for blind and cognitively disabled users.</li>
+<li><strong>Browser advice.</strong> The city tells applicants the portal works best in Chrome, not Safari or Edge. That matters for people whose assistive technology is tied to another browser.</li>
+<li>Pages behind the login were not tested.</li>
+</ul>
+</div>
+</details>
+
+<details class="card fd">
+<summary>ADA grievance form <span class="chip r-bar">Barriers found</span></summary>
+<div class="fd-body">
+<p>The form residents use to complain about disability discrimination is itself hard to use with assistive technology. We tabbed through every control with VoiceOver on macOS.</p>
+<ul>
+<li><strong>Silent controls (WCAG 1.3.1, 4.1.2).</strong> VoiceOver announces nothing for the State dropdown, the AM and PM boxes, or any of the six "Why do you believe the discrimination occurred?" checkboxes (Race or Color, Age, Disability, National Origin, Sex, Other). A blind user cannot tell which basis of discrimination they are selecting.</li>
+<li><strong>Internal names instead of labels (WCAG 2.4.6).</strong> About 30 fields are read by internal names such as "Rep zip text box", "Emp name 1 text box" and "Police report no text box", not by their visible labels. Only the three large text areas are read clearly.</li>
+<li><strong>Format hints read as values (WCAG 3.3.2).</strong> Phone, email, date and time formats exist only as placeholder text ("999-999-9999", "MM/DD/YYYY"). VoiceOver reads them as if the field were already filled in.</li>
+<li><strong>Errors before input (WCAG 3.3.1).</strong> Required fields (name, address, email, date, time) are announced as "invalid data" before the user has typed anything.</li>
+<li><strong>The asterisk means two things.</strong> A red asterisk inside a field marks it required, but the footer says a black asterisk on a label means the information is kept confidential. Phone and Alternate Phone carry the label asterisk, and VoiceOver does not announce them as required.</li>
+<li><strong>Wrong control types.</strong> AM/PM and Yes/No/Unknown are checkboxes, so a user can tick both AM and PM, or both Yes and No.</li>
+<li><strong>Typo.</strong> The heading reads "WHY DO YOU BELIEVE THE DESCRIMINATION OCCURED?"</li>
+<li><strong>Tab order.</strong> The code uses positive tabindex values, but tabbing by hand moved top to bottom in a sensible order. Low risk in practice.</li>
+<li>There is no skip link.</li>
+</ul>
+</div>
+</details>
+
+<details class="card fd">
+<summary>Class registration <span class="chip r-part">Partial</span></summary>
+<div class="fd-body">
+<p>Registration for city classes, including Disability Services programs, runs on yourirvine.org.</p>
+<ul>
+<li><strong>Alt text (WCAG 1.1.1).</strong> Four images have no alt attribute, one of them visible.</li>
+<li><strong>Headings.</strong> The page has three h1 headings.</li>
+<li><strong>Contrast (WCAG 1.4.3).</strong> One green label measures 3.17:1.</li>
+<li><strong>Overlay.</strong> The site loads an AudioEye overlay script. Overlays do not fix underlying code and are not a substitute for conformance, so we treat this as a flag, not a pass.</li>
+<li><strong>reCAPTCHA</strong> is present on the catalog page.</li>
+</ul>
+</div>
+</details>
+
+<details class="card fd">
+<summary>Meeting archive <span class="chip r-part">Partial</span></summary>
+<div class="fd-body">
+<ul>
+<li><strong>One very long page.</strong> The archive lists every meeting since at least 2024 on one page: 875 table rows and 4,243 links, 1,692 of which open new windows.</li>
+<li><strong>No landmarks or skip link (WCAG 2.4.1)</strong> to get past the list. Table headers are correctly scoped and links carry labels.</li>
+<li><strong>Duplicate IDs.</strong> The page has 60 duplicate IDs.</li>
+<li><strong>Agendas</strong> are published only as PDFs. We did not sample agenda PDFs.</li>
+</ul>
+</div>
+</details>
+
+<details class="card fd">
+<summary>Meeting video player <span class="chip r-part">Partial</span></summary>
+<div class="fd-body">
+<ul>
+<li><strong>Captions.</strong> Recorded council meetings play in a Granicus player with a Closed Captions on/off menu. We did not check caption accuracy.</li>
+<li><strong>Unnamed controls (WCAG 4.1.2).</strong> The play and volume controls are unlabeled links, so a screen-reader user cannot tell them apart.</li>
+<li><strong>No transcript.</strong></li>
+</ul>
+</div>
+</details>
+
+<details class="card fd">
+<summary>Public comment (eComment) <span class="chip r-bar">Barriers found</span></summary>
+<div class="fd-body">
+<ul>
+<li><strong>Contrast (WCAG 1.4.3).</strong> 14 of 29 text items on the meetings page are below the 4.5:1 minimum, re-measured on November 14. The worst are the white-on-blue "View Agenda" buttons at 2.91:1, which residents must use to reach the items they comment on. Blue links and tabs measure 3.89:1, gray "Meeting:" labels and "Sign Up" 3.00:1, and gray footer links 3.85:1.</li>
+<li><strong>No main landmark or skip link (WCAG 2.4.1).</strong></li>
+</ul>
+</div>
+</details>
+
+<details class="card fd">
+<summary>PDF forms <span class="chip r-part">Partial</span></summary>
+<div class="fd-body">
+<p>We sampled five PDFs: the grievance PDF, the disability advisory committee application, a permit form, the committee bylaws and the website policy.</p>
+<ul>
+<li><strong>Tagged.</strong> All five are tagged, which is the hard part.</li>
+<li><strong>Language (WCAG 3.1.1).</strong> Three have no document language set.</li>
+<li><strong>Title (WCAG 2.4.2).</strong> Four have no title.</li>
+</ul>
+</div>
+</details>
+
+</div>
+</section>
+
+<section aria-labelledby="recs-h" class="wrap" style="padding-top: 36px; padding-bottom: 12px">
+<div style="background: #E6F3F8; border-radius: 10px; padding: var(--box); display: flex; flex-direction: column; gap: 14px">
+<h2 id="recs-h" style="font-size: clamp(1.6rem, 2.8vw, 2rem)">What we recommend</h2>
+<div aria-hidden="true" style="width: 64px; height: 5px; background: #E3A823; border-radius: 0px"></div>
+<p style="max-width: 44em">Ordered by how many residents each fix unblocks against how little work it takes.</p>
+<ol class="recs">
+<li><strong>Rebuild the ADA grievance form as a native web form.</strong> Give every control a label that matches its visible text, use radio buttons for single choices (AM/PM, Yes/No/Unknown), put format hints in visible text instead of placeholders, mark required fields one consistent way, and fix "DESCRIMINATION OCCURED". The complaint channel for disabled residents should be the most accessible form the city has.</li>
+<li><strong>Require the permit vendor to fix the login page:</strong> name the Login button, add visible field labels, raise button and link contrast to 4.5:1, and offer a non-CAPTCHA alternative.</li>
+<li><strong>Publish a real accessibility statement</strong> naming WCAG 2.1 AA, the April 26, 2027 deadline, a contact, and a response time. Replace the email link with a tracked report form.</li>
+<li><strong>Add email, form and relay options for meeting accommodation requests</strong>, correct "assisted living devices" to assistive listening devices, and state that captions and ASL are available.</li>
+<li><strong>Give each Disability Services card link a unique name</strong>, such as "Accommodation Support", instead of "Open linked content".</li>
+<li><strong>Write WCAG 2.1 AA into vendor contracts</strong> for Granicus, SeamlessDocs, the registration system and the permit portal, since third-party tools are the city's legal responsibility too.</li>
+<li><strong>Set language and title on every PDF form</strong>, and publish agendas as HTML alongside PDF.</li>
+<li><strong>Commission a manual audit with disabled testers before the 2027 deadline</strong>, covering the logged-in permit, payment and registration flows this check could not reach.</li>
+</ol>
+</div>
+</section>
+
+<section aria-labelledby="method-h" class="wrap" style="padding-top: 36px; padding-bottom: 48px">
+<div class="card" style="padding: var(--box); display: flex; flex-direction: column; gap: 14px">
+<h2 id="method-h" style="font-size: clamp(1.6rem, 2.8vw, 2rem)">How we tested, and what we didn't</h2>
+<div style="display: flex; flex-wrap: wrap; gap: 24px 40px">
+<div style="flex: 1 1 320px; min-width: 0; display: flex; flex-direction: column; gap: 12px">
+<h3 style="font-size: 18px">How we tested</h3>
+<p>On November 14, 2026 we loaded each page in Chrome and ran a scripted check of the live page: language tag, skip link, landmarks, headings, image alt text, link and button names, form labels, iframe titles, tables, zoom blocking and text contrast.</p>
+<p>The same day we re-tested the two worst services by hand. We tabbed through every control on the ADA grievance form with VoiceOver on macOS and recorded what it announced. We also read the permit login page's accessibility tree in Chrome, which is the information a screen reader announces. We re-measured contrast on the eComment page.</p>
+</div>
+<div style="flex: 1 1 320px; min-width: 0; display: flex; flex-direction: column; gap: 12px">
+<h3 style="font-size: 18px">What we didn't test</h3>
+<ul class="lims">
+<li>Automated checks catch only part of WCAG. Counts for services other than the ADA form, permit login and eComment contrast come from the script only and still need checking by hand.</li>
+<li>Screen-reader and keyboard behavior on the other services, focus visibility, caption accuracy, mobile apps, agenda PDFs, and anything behind a login.</li>
+<li>The payment portal and the public records portal could not be scripted from our browser session.</li>
+<li>Contrast was measured only for text on solid backgrounds. Text over images was skipped.</li>
+<li>PDF checks looked for tags, language and title in the file structure. They do not confirm correct reading order.</li>
+</ul>
+</div>
+</div>
+<p style="max-width: 44em">Spotted a mistake, or hit a barrier we missed? Tell us on the <a href="get-involved.html">Get involved page</a>.</p>
+</div>
+</section>
+
+</main>
+
+<footer class="dark" style="background: #0F2A4A; color: #FFFFFF; font-size: 15px">
+<div class="wrap" style="padding-top: 36px; padding-bottom: 36px; display: flex; flex-wrap: wrap; gap: 28px 48px; align-items: center">
+<div style="flex: 1 1 220px; display: flex; flex-direction: column; align-items: flex-start; gap: 8px">
+<img src="images/logo-white.png" alt="ENABLE, Irvine, CA" style="display: block; height: 60px; width: auto">
+<span style="font-size: 16px; font-weight: 600; letter-spacing: 0.04em">enableca.org</span>
+</div>
+<p style="flex: 2 1 280px; min-width: 0">A student-led project in Irvine, CA, working to make city services easier to use for people with disabilities and their families. We are just getting started.</p>
+<div style="flex: 1 1 240px; min-width: 0; display: flex; flex-direction: column; gap: 4px">
+<p style="font-weight: 700; font-size: 16px">Contact</p>
+<a href="mailto:enableca.org@gmail.com" style="padding: 6px 0">enableca.org@gmail.com</a>
+<p>Irvine, CA</p>
+</div>
+<nav aria-label="Footer" style="flex: 0 1 140px">
+<p style="font-weight: 700; font-size: 16px">Site</p>
+<ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column">
+<li><a href="index.html" style="display: inline-block; padding: 4px 0">Home</a></li>
+<li><a href="our-work.html" style="display: inline-block; padding: 4px 0">Our work</a></li>
+<li><a href="findings.html" style="display: inline-block; padding: 4px 0">Findings</a></li>
+<li><a href="team.html" style="display: inline-block; padding: 4px 0">Team</a></li>
+<li><a href="get-involved.html" style="display: inline-block; padding: 4px 0">Get involved</a></li>
+<li><a href="privacy.html" style="display: inline-block; padding: 4px 0">Privacy</a></li>
+</ul>
+</nav>
+</div>
+</footer>
+</div>
+</body>
+</html>

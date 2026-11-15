@@ -7,7 +7,7 @@ Goal: get this onto Vercel as a preliminary site.
 
 | Path | What it is |
 |---|---|
-| `index.html`, `our-work.html`, `team.html`, `get-involved.html`, `privacy.html` | The five pages. Plain HTML, no build step. |
+| `index.html`, `our-work.html`, `findings.html`, `team.html`, `get-involved.html`, `privacy.html` | The six pages. Plain HTML, no build step. |
 | `styles.css` | Shared base styles. Most layout is inline on the elements. |
 | `images/` | Web-sized logos, headshots and graphics used by the pages. |
 | `originals/` | Full-size logo and headshot sources, not referenced by the pages. Do not deploy. |
@@ -19,7 +19,7 @@ These pages were exported from it. Text and layout match it.
 ## Deploy
 
 No framework. In Vercel: import the repo, Framework Preset "Other", no build command, output directory = repo root.
-Exclude `originals/` and this file from the deploy (`.vercelignore`).
+Exclude `originals/`, this file and `Irvine_Accessibility_Audit.txt` from the deploy (`.vercelignore`).
 Then point the domain `enableca.org` at the project.
 
 ## To do
@@ -32,12 +32,14 @@ Then point the domain `enableca.org` at the project.
 2. **No analytics or tracking cookies.** `privacy.html` promises none.
 3. **Accessibility pass.** Run Lighthouse and axe, plus a keyboard-only pass. Target WCAG 2.1 AA.
    Nothing has been tested with real tools yet.
-4. **Phone widths.** Layouts wrap, and Home looked right at 390px, but check all five pages.
+4. **Phone widths.** Layouts wrap, and Home looked right at 390px, but check all six pages.
 5. Optional: move repeated inline styles into `styles.css`, add a favicon and Open Graph tags.
 
 ## Rules to keep
 
-- **Preliminary only.** No claimed findings, statistics, testimonials or completed projects.
+- **Preliminary only.** No claimed findings, statistics, testimonials or completed projects,
+  except `findings.html`: the preliminary digital accessibility findings (November 2026), taken only from
+  `Irvine_Accessibility_Audit.txt`. Keep it labelled preliminary, and do not add facts that are not in that report.
 - **Do not add or rewrite content.** Bios and alt text were supplied by the team.
 - Keep the skip link, visible focus rings, one `h1` per page, labelled form fields, and alt text as written.
 - No autoplay or motion. Never show status by colour alone.
