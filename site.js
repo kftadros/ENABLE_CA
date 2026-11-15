@@ -1,16 +1,20 @@
-// Collapsible main menu for narrow screens. Without JS the nav simply stays visible.
-document.documentElement.classList.add('js');
+// Header hides while scrolling down and returns on any scroll up.
 document.addEventListener('DOMContentLoaded', () => {
-  const btn = document.querySelector('.menu-btn');
-  const nav = document.getElementById('site-nav');
-  if (!btn || !nav) return;
-  btn.hidden = false;
-  const setOpen = (open) => {
-    nav.classList.toggle('open', open);
-    btn.setAttribute('aria-expanded', String(open));
+  const hdr = document.querySelector('.site-hdr');
+  if (!hdr) return;
+  let lastY = window.scrollY;
+  let ticking = false;
+  const update = () => {
+    const y = window.scrollY;
+    const delta = y - lastY;
+    if (y <= hdr.offsetHeight || hdr.contains(document.activeElement)) hdr.classList.remove('away');
+    else if (delta > 6) hdr.classList.add('away');
+    else if (delta < -6) hdr.classList.remove('away');
+    if (Math.abs(delta) > 6) lastY = y;
+    ticking = false;
   };
-  btn.addEventListener('click', () => setOpen(!nav.classList.contains('open')));
-  btn.parentElement.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && nav.classList.contains('open')) { setOpen(false); btn.focus(); }
-  });
+  window.addEventListener('scroll', () => {
+    if (!ticking) { ticking = true; requestAnimationFrame(update); }
+  }, { passive: true });
+  hdr.addEventListener('focusin', () => hdr.classList.remove('away'));
 });

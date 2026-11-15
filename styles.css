@@ -44,20 +44,24 @@ a:hover{color:#1D4ED8}
 .b2:hover{background:#E6F3F8;color:#0F2A4A}
 }
 
-/* Mobile menu button (shown by site.js on narrow screens) */
-.menu-btn{display:none;align-items:center;gap:8px;min-height:44px;padding:0 14px;font:inherit;font-size:16px;font-weight:700;color:#0F2A4A;background:#FFFFFF;border:2px solid #0F2A4A;border-radius:8px;cursor:pointer}
-.menu-btn svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round}
+/* Sticky header: slides away on scroll down, back on scroll up (site.js) */
+.site-hdr{position:sticky;top:0;z-index:20;transition:transform .25s ease}
+.site-hdr.away{transform:translateY(-100%)}
+@media (prefers-reduced-motion:reduce){.site-hdr{transition:none}}
 
 @media (max-width:640px){
 :root{--gut:20px;--box:20px}
-.hdr{column-gap:12px !important}
-.hdr img{height:48px !important}
-.js .menu-btn:not([hidden]){display:inline-flex}
-.js .site-nav{flex:1 1 100%}
-.js .site-nav:not(.open){display:none}
-.js .site-nav ul{flex-direction:column;gap:4px !important;padding-bottom:4px !important}
-.js .site-nav .nav{display:flex}
+.hdr{row-gap:6px !important;padding-top:10px !important;padding-bottom:6px !important}
+.hdr img{height:44px !important}
+.site-nav{flex:1 1 100%;overflow-x:auto;scrollbar-width:none}
+.site-nav ul{flex-wrap:nowrap !important;justify-content:space-between;gap:4px !important}
+.site-nav li{flex:1 1 auto}
+.site-nav .nav{display:flex;justify-content:center;padding:0 8px;font-size:15px;white-space:nowrap}
 .ctas>a{flex:1 1 100%}
 .report-head{flex-direction:column;align-items:flex-start !important;gap:12px !important}
 footer nav a{padding:10px 0 !important}
+}
+@media (max-width:360px){
+.site-nav ul{gap:0 !important}
+.site-nav .nav{font-size:13px;padding:0 5px}
 }
