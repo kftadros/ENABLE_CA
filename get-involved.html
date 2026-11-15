@@ -9,17 +9,19 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&amp;display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
+<script src="site.js"></script>
 </head>
 <body>
 <div style="font-size: 17px; line-height: 1.55">
 <a class="skip" href="#main">Skip to main content</a>
 
 <header style="background: #FFFDF8; border-bottom: 1px solid #EDE6D6">
-<div class="wrap" style="padding-top: 12px; padding-bottom: 12px; display: flex; flex-wrap: wrap; gap: 8px 32px; align-items: center; justify-content: space-between">
+<div class="wrap hdr" style="padding-top: 12px; padding-bottom: 12px; display: flex; flex-wrap: wrap; gap: 8px 32px; align-items: center; justify-content: space-between">
 <a href="index.html" aria-label="ENABLE, Irvine, CA: home" style="display: flex; align-items: center; gap: 12px; text-decoration: none">
 <img src="images/logo-color.png" alt="" style="display: block; height: 60px; width: auto">
 </a>
-<nav aria-label="Main">
+<button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav" hidden><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>Menu</button>
+<nav id="site-nav" class="site-nav" aria-label="Main">
 <ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 4px 12px">
 <li><a class="nav" href="index.html">Home</a></li>
 <li><a class="nav" href="our-work.html">Our Work</a></li>
@@ -33,11 +35,11 @@
 <main id="main">
 
 <section aria-labelledby="hero-h" style="background: #FAF7EF; display: flex; flex-wrap: wrap">
-<div style="flex: 1 1 400px; min-width: 0; padding: 44px 32px 44px max(32px, calc((100% - 1136px) / 2)); box-sizing: border-box; display: flex; flex-direction: column; gap: 18px; align-items: flex-start; justify-content: center">
+<div style="flex: 1 1 400px; min-width: 0; padding: 44px var(--gut) 44px max(var(--gut), calc((100% - 1136px) / 2)); box-sizing: border-box; display: flex; flex-direction: column; gap: 18px; align-items: flex-start; justify-content: center">
 <h1 id="hero-h" style="font-size: clamp(2.3rem, 4.4vw, 3.5rem); line-height: 1.05">Get Involved</h1>
 <div aria-hidden="true" style="width: 170px; height: 5px; background: #E3A823; border-radius: 0px"></div>
 <p style="max-width: 44em">Residents, families, organizations, and city partners are essential to a more accessible Irvine. Share the barriers you see and experience, and collaborate with ENABLE to turn real community needs into practical, lasting solutions.</p>
-<div style="display: flex; flex-wrap: wrap; gap: 16px; margin-top: 8px">
+<div class="ctas" style="display: flex; flex-wrap: wrap; gap: 16px; margin-top: 8px">
 <a class="b1" href="#report">Report a Barrier <svg aria-hidden="true" viewBox="0 0 24 24" style="width: 1.1em; height: 1.1em; flex: none; vertical-align: -0.2em; fill: none; stroke: currentColor; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round"><path d="M4 12h15M13 6l6 6-6 6"></path></svg></a>
 <a class="b2" href="mailto:enableca.org@gmail.com">Partner With Us</a>
 </div>
@@ -46,8 +48,8 @@
 
 <div class="wrap" style="padding-top: 24px; padding-bottom: 40px; display: flex; flex-wrap: wrap; gap: 24px; align-items: flex-start">
 
-<section id="report" aria-labelledby="report-h" class="card" style="flex: 2 1 520px; min-width: 0; padding: 32px; box-sizing: border-box; display: flex; flex-direction: column; gap: 24px">
-<div style="display: flex; gap: 20px; align-items: center">
+<section id="report" aria-labelledby="report-h" class="card" style="flex: 2 1 520px; min-width: 0; padding: var(--box); box-sizing: border-box; display: flex; flex-direction: column; gap: 24px">
+<div class="report-head" style="display: flex; gap: 20px; align-items: center">
 <span class="ico"><svg class="i" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 21s-6-5.500-6-10a6 6 0 1 1 12 0c0 4.500-6 10-6 10z"></path><circle cx="12" cy="11" r="2"></circle></svg></span>
 <div style="display: flex; flex-direction: column; gap: 6px">
 <h2 id="report-h" style="font-size: clamp(1.7rem, 3vw, 2.1rem)">Report a Barrier</h2>

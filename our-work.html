@@ -9,17 +9,19 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&amp;display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
+<script src="site.js"></script>
 </head>
 <body>
 <div style="font-size: 17px; line-height: 1.55">
 <a class="skip" href="#main">Skip to main content</a>
 
 <header style="background: #FFFDF8; border-bottom: 1px solid #EDE6D6">
-<div class="wrap" style="padding-top: 12px; padding-bottom: 12px; display: flex; flex-wrap: wrap; gap: 8px 32px; align-items: center; justify-content: space-between">
+<div class="wrap hdr" style="padding-top: 12px; padding-bottom: 12px; display: flex; flex-wrap: wrap; gap: 8px 32px; align-items: center; justify-content: space-between">
 <a href="index.html" aria-label="ENABLE, Irvine, CA: home" style="display: flex; align-items: center; gap: 12px; text-decoration: none">
 <img src="images/logo-color.png" alt="" style="display: block; height: 60px; width: auto">
 </a>
-<nav aria-label="Main">
+<button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav" hidden><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>Menu</button>
+<nav id="site-nav" class="site-nav" aria-label="Main">
 <ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 4px 12px">
 <li><a class="nav" href="index.html">Home</a></li>
 <li><a class="nav cur" aria-current="page" href="our-work.html">Our Work</a></li>
@@ -33,7 +35,7 @@
 <main id="main">
 
 <section aria-labelledby="hero-h" style="background: #FAF7EF; display: flex; flex-wrap: wrap">
-<div style="flex: 1 1 400px; min-width: 0; padding: 40px 32px 40px max(32px, calc((100% - 1136px) / 2)); box-sizing: border-box; display: flex; flex-direction: column; gap: 16px; align-items: flex-start; justify-content: center">
+<div style="flex: 1 1 400px; min-width: 0; padding: 40px var(--gut) 40px max(var(--gut), calc((100% - 1136px) / 2)); box-sizing: border-box; display: flex; flex-direction: column; gap: 16px; align-items: flex-start; justify-content: center">
 <h1 id="hero-h" style="font-size: clamp(2.1rem, 3.9vw, 3.1rem); line-height: 1.1">Our Work</h1>
 <div aria-hidden="true" style="width: 140px; height: 5px; background: #E3A823; border-radius: 0px"></div>
 <p style="max-width: 44em">Our plan: audit city services, listen to families, propose fixes, and build solutions. We are at the start of that process, and this page will fill in as the work happens.</p>
@@ -41,7 +43,7 @@
 </section>
 
 <section aria-labelledby="how-h" class="wrap" style="padding-top: 20px; padding-bottom: 12px">
-<div style="background: #E6F3F8; border-radius: 10px; padding: 32px; display: flex; flex-wrap: wrap; gap: 32px 40px; align-items: center">
+<div style="background: #E6F3F8; border-radius: 10px; padding: var(--box); display: flex; flex-wrap: wrap; gap: 32px 40px; align-items: center">
 <div style="flex: 1 1 240px; min-width: 0; display: flex; flex-direction: column; gap: 12px">
 <h2 id="how-h" style="font-size: clamp(1.7rem, 3vw, 2.1rem)">How We Work</h2>
 <div aria-hidden="true" style="width: 64px; height: 5px; background: #E3A823; border-radius: 0px"></div>
@@ -102,7 +104,7 @@
 </section>
 
 <section aria-labelledby="findings-h" class="wrap" style="padding-top: 36px; padding-bottom: 48px">
-<div class="card" style="padding: 32px; display: flex; flex-direction: column; gap: 14px; align-items: flex-start">
+<div class="card" style="padding: var(--box); display: flex; flex-direction: column; gap: 14px; align-items: flex-start">
 <h2 id="findings-h" style="font-size: clamp(1.6rem, 2.8vw, 2rem)">Findings</h2>
 <p style="max-width: 44em">Nothing published yet. As we complete audits and interviews, each finding will be listed here with where it stands:</p>
 <ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 10px">
