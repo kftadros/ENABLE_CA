@@ -99,3 +99,13 @@ footer nav a{padding:10px 0 !important}
 .fd-body ul,.lims{margin:0;padding-left:1.2em;display:flex;flex-direction:column;gap:8px}
 .recs{margin:0;padding-left:1.5em;display:flex;flex-direction:column;gap:12px;max-width:52em}
 .recs li::marker{font-weight:700;color:#0F2A4A}
+
+/* Whole card clickable through its heading link */
+.card-link{position:relative}
+.card-link h3 a{text-decoration:none}
+.card-link h3 a::after{content:"";position:absolute;inset:0;border-radius:10px}
+@supports selector(:has(a)){
+.card-link:has(a:focus-visible){outline:3px solid #1D4ED8;outline-offset:3px}
+.card-link h3 a:focus-visible{outline:none}
+}
+@media (hover:hover){.card-link:hover{border-color:#1D4ED8}.card-link:hover h3 a{text-decoration:underline}}
